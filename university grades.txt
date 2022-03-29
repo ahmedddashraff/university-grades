@@ -1,0 +1,103 @@
+برنامج يخزن مجموعة من الطلاب و درجاتهم فى مجموعة من المواد (math, science ,English ) و بفرض ان كل مادة من 100 درجة يحسب النسبة المئوية لكل مادة و للمجموع كامل و لو اى درجة اقل من 50% يتكتبله ( F ) و لو بين ال 50 و ال 60 يتكتبله ( D ) و لو بين ال 60 و ال 70 يتكتبله ( C ) و لو بين ال 70 و ال 80 يتكتبله ( B ) و لو بين ال 80 و ال 100 يتكتبله ( A )
+#include <stdio.h>
+#include <string.h>
+struct student{char n[20],p[20],A,B,C,K;
+int l,y,z,m;};
+int main(void){
+struct student x[3];
+int i;
+for(i=0;i<3;i++){
+    printf("Enter name of #%d student:  ",i+1);
+    scanf("%s",x[i].n);
+   
+    printf("Enter ID of #%d student:  ",i+1);
+    scanf("%s",x[i].p);
+    s:
+    printf("Enter grade of #%d student at math:  ",i+1);
+    scanf("%d",&x[i].l);
+     switch(x[i].l){
+         case 0 ... 49:
+         x[i].A='-';
+         case 50:
+         x[i].A='F';break;
+         case 51 ... 59:
+         x[i].A='D';break;
+         case 60 ... 69:
+         x[i].A='C';break;
+         case 70 ... 79:
+         x[i].A='B';break;
+         case 80 ... 100:
+         x[i].A='A';break;
+         default:
+         goto s;
+     }
+     a:
+    printf("Enter grade of #%d student at science:  ",i+1);
+    scanf("%d",&x[i].y);
+    switch(x[i].y){
+        case 0 ... 49:
+        x[i].B='-';
+         case 50:
+         x[i].B='F';break;
+         case 51 ... 59:
+         x[i].B='D';break;
+         case 60 ... 69:
+         x[i].B='C';break;
+         case 70 ... 79:
+         x[i].B='B';break;
+         case 80 ... 100:
+         x[i].B='A';break;
+         default:
+         goto a;
+     }
+     h:
+    printf("Enter grade of #%d student at english:  ",i+1);
+    scanf("%d",&x[i].z);
+    switch(x[i].z){
+        case 0 ... 49:
+        x[i].C='-';
+         case 50:
+         x[i].C='F';break;
+         case 51 ... 59:
+         x[i].C='D';break;
+         case 60 ... 69:
+         x[i].C='C';break;
+         case 70 ... 79:
+         x[i].C='B';break;
+         case 80 ... 100:
+         x[i].C='A';break;
+         default:
+         goto h;
+     }
+
+
+
+
+
+x[i].m=(x[i].l+x[i].y+x[i].z);
+switch(x[i].m){
+    case 0 ... 149:
+    x[i].K='-';
+         case 150:
+         x[i].K='F';break;
+         case 151 ... 260:
+         x[i].K='D';break;
+         case 261 ... 270:
+         x[i].K='C';break;
+         case 271 ... 280:
+         x[i].K='B';break;
+         case 281 ... 300:
+         x[i].K='A';break;}
+
+}
+printf("\n\n");
+int q;
+for(q=0;q<3;q++){printf("*****************************\n");
+    printf("*\tname: %s   id: %s \n",x[q].n,x[q].p);
+    printf("*\tMath : %c   Science: %c  \n",x[q].A,x[q].B);
+    printf("*\tEnglish: %c   General: %c \n",x[q].C,x[q].K);
+    printf("*****************************\n");
+   printf("\n\n");
+}
+
+return 0;}
